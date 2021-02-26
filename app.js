@@ -55,10 +55,10 @@ const myInput = document.querySelector('input');
 
 myInput.addEventListener('input', () => {
     let value = myInput.value;
+    let result = getDataPromise(getInfoUrl + value);
     if (value === '') {
         myUL.innerHTML = '';
     }
-    let result = getDataPromise(getInfoUrl + value);
     result.then((data) => {
         console.log(data[1]);
         let detail = data[1];
